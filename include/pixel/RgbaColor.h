@@ -26,6 +26,15 @@ namespace pixel {
 	   public:
 		// maybe provide ctors?
 
+		constexpr RgbaColor() = default;
+
+		constexpr RgbaColor(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a)
+			: r(r),
+			  g(g),
+			  b(b),
+			  a(a) {
+		}
+
 		struct {
 			std::uint8_t r;
 			std::uint8_t g;
@@ -39,8 +48,8 @@ namespace pixel {
 
 		// TODO: Maybe:
 		//
-		// RgbaColor ColorFrom16Bpp(uint16_t, endian);
-		// unique_ptr<RgbaColor[]> PaletteFrom16Bpp(span<const uint16_t>, endian);
+		static RgbaColor ColorFrom16Bpp(std::uint16_t);
+		static void PaletteFrom16Bpp(RgbaColor* dest, const std::uint8_t* src, std::size_t colorCount);
 	};
 } // namespace pixel
 

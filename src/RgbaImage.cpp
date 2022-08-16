@@ -55,4 +55,25 @@ namespace pixel {
 		return size;
 	}
 
+	RgbaImage RgbaImage::From4Bpp(const std::uint8_t* data, const RgbaColor* palette, ImageSize size) {
+		RgbaImage image(size);
+		auto* buffer = image.GetBuffer();
+
+		for(std::size_t i = 0; i < (size.width * size.height / 2); ++i)
+			for(std::size_t b = 0; b < 2; b++)
+				*(buffer++) = palette[static_cast<std::uint16_t>(((data[i] & (0x0F << (b * 4))) >> (b * 4)))];
+
+		return image;
+	}
+
+	RgbaImage RgbaImage::From8Bpp(const std::uint8_t* data, const RgbaColor* palette, ImageSize size) {
+		RgbaImage image(size);
+		auto* buffer = image.GetBuffer();
+
+		for(std::size_t i = 0; i < size.width * size.height; ++i)
+			*(buffer++) = palette[data[i]];
+
+		return image;
+	}
+
 } // namespace pixel

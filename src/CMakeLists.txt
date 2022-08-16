@@ -1,6 +1,7 @@
 add_library(pixel_libpixel
 		stb_impl.cpp
 
+		RgbaColor.cpp
 		RgbaImage.cpp
 		ImageWriter.cpp
 		)

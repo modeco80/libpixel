@@ -82,10 +82,14 @@ namespace pixel {
 		 */
 		[[nodiscard]] ImageSize GetSize() const;
 
-		// TODO: Add these methods, to make sampling data a bit nicer.
-		//
-		// static RgbaImage From4Bpp(span<std::uint8_t> data, span<RgbaColor> palette, ImageSize size);
-		// static RgbaImage From8Bpp(span<std::uint8_t> data, span<RgbaColor> palette, ImageSize size);
+		// Methods for easy sampling/conversion.
+		// Note:
+		// Palette for all palletized formats is expected to have
+		// been converted via RgbaColor::PaletteFrom*Bpp() or
+		// already in RgbaColor format.
+
+		static RgbaImage From4Bpp(const std::uint8_t* data, const RgbaColor* palette, ImageSize size);
+		static RgbaImage From8Bpp(const std::uint8_t* data, const RgbaColor* palette, ImageSize size);
 		// static RgbaImage From16Bpp(span<std::uint8_t> data, ImageSize size);
 		// static RgbaImage From32Bpp(span<std::uint8_t> data, ImageSize size);
 
