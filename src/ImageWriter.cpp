@@ -8,7 +8,7 @@
 
 #include <pixel/ImageWriter.h>
 #include <pixel/RgbaImage.h>
-#include <stb_image_write.h>
+#include "stb_image_write.h"
 
 namespace pixel {
 
