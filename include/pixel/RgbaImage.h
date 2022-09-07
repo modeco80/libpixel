@@ -11,6 +11,7 @@
 
 #include <pixel/RgbaColor.h>
 
+#include <cstddef>
 #include <cstdint>
 #include <memory>
 

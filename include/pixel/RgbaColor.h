@@ -9,6 +9,7 @@
 #ifndef LIBPIXEL_RGBACOLOR_H
 #define LIBPIXEL_RGBACOLOR_H
 
+#include <cstddef>
 #include <cstdint>
 
 namespace pixel {
