@@ -23,7 +23,7 @@ namespace pixel {
 
 		// TODO: Handle STB errors
 
-		stbi_write_png(outputPath.c_str(), imagePtr->GetSize().width, imagePtr->GetSize().height, 4, imagePtr->GetBuffer(), static_cast<int>(imagePtr->GetStride()));
+		stbi_write_png(outputPath.string().c_str(), imagePtr->GetSize().width, imagePtr->GetSize().height, 4, imagePtr->GetBuffer(), static_cast<int>(imagePtr->GetStride()));
 	}
 
 } // namespace pixel
